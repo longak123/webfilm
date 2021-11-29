@@ -686,3 +686,6 @@ aside{
     position:absolute;
     display:none;
 }
+.btnlg{
+    list-style-type:none;
+}

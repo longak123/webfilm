@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="~/Content/Site.css" />
     <link rel="stylesheet" href="~/Content/lightslider.css" />
+    <link href="~/Content/login.css" rel="stylesheet" />
     <script src="~/Content/JQuery3.3.1.js"></script>
     <script src="~/Content/lightslider.js"></script>
+    @RenderSection("css", false)
+    @RenderSection("scriptstren", required: false)
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,7 +20,7 @@
             @*<section>
                 <div class="logo">
                     <a href="#">PHIMHL</a>
-                </div>
+                </div>  
                 <div class="nav">
                     <a href="">PhimHL</a>
                     <a href="">Thể Loại</a>
@@ -37,43 +40,46 @@
                 </div>
                 <button class="btn">Đăng nhập</button>
             </div>*@
-            <nav>
-                <a href="/Home/Index" class="logo"><img src="~/Content/images/proxy_form.png"/></a>
-                <ul class="menu">
-                    <li class="has-sunmenu">
-                        <a href="#">Thể loại</a>
-                        <ul class="drop-menu">
-                            <li><a href="#">Hành động</a></li>
-                            <li><a href="#">Kinh dị</a></li>
-                            <li><a href="#">Hài hước</a></li>
-                            <li><a href="#">Tình cảm- Lãng mạn</a></li>
-                            <li><a href="#">Viễn tưởng</a></li>
-                            <li><a href="#">Cổ trang</a></li>
-                            <li><a href="#">Phiêu lưu</a></li>
-                            <li><a href="#">Chiến tranh</a></li>
-                            <li><a href="#">Hoạt hình</a></li>
-                            <li><a href="#">Hình sự</a></li>
-                            <li><a href="#">Hồi hộp - Gay cấn</a></li>
-                            <li><a href="#">Tâm lý</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Quốc Gia</a> </li>
-                    <li><a href="#">Loại phim</a> </li>
-                    <li><a href="#">Movie</a> </li>
-                    <li><a href="#">TV series</a> </li>
-                    <li><a href="#">Top IMDB</a> </li>
-                    <li><a href="#">List a-z </a> </li>
-                    <li><a href="#">Yêu cầu </a> </li>
-                </ul>
-                <div class="search">
-                    <input type="text" placeholder="Nhập phim muốn tìm" />
-                    <i class="fas fa-search"></i>
-               
-                </div>
-                <button class="btn"><a href="/Home/Login">Đăng nhập</a></button>
-            </nav>
+        <nav>
+            <a href="/Home/Index" class="logo"><img src="~/Content/images/proxy_form.png" /></a>
+            <ul class="menu">
+                <li class="has-sunmenu">
+                    <a href="#">Thể loại</a>
+                    <ul class="drop-menu">
+                        <li><a href="#">Hành động</a></li>
+                        <li><a href="#">Kinh dị</a></li>
+                        <li><a href="#">Hài hước</a></li>
+                        <li><a href="#">Tình cảm- Lãng mạn</a></li>
+                        <li><a href="#">Viễn tưởng</a></li>
+                        <li><a href="#">Cổ trang</a></li>
+                        <li><a href="#">Phiêu lưu</a></li>
+                        <li><a href="#">Chiến tranh</a></li>
+                        <li><a href="#">Hoạt hình</a></li>
+                        <li><a href="#">Hình sự</a></li>
+                        <li><a href="#">Hồi hộp - Gay cấn</a></li>
+                        <li><a href="#">Tâm lý</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Quốc Gia</a> </li>
+                <li><a href="#">Loại phim</a> </li>
+                <li><a href="#">TV series</a> </li>
+                <li><a href="#">Movie</a> </li>
+                <li><a href="#">Top IMDB</a> </li>
+            </ul>
+            @*<li><a href="#">List a-z </a> </li>
+        <li><a href="#">Yêu cầu </a> </li>*@
+            <div class="search">
+                <input type="text" placeholder="Nhập phim muốn tìm" />
+                <i class="fas fa-search"></i>
+            </div>
+            @*<button class="btn"><a href="#">Đăng nhập</a></button>*@
+            @{Html.RenderPartial("View"); }
+            @*<li>
+            <button class="bt-login" onclick="document.getElementById('id01').style.display='block'">Login</button>
+        </li>*@
+        </nav>
       
-          <section id="main">
+          @*<section id="main">
               <h1 class="showcase-heading">Phim sắp ra</h1>
 
               <ul id="autoWidth" class="cs-hidden">
@@ -146,7 +152,7 @@
               </ul>
 
              
-          </section>
+          </section>*@
         
         @RenderBody()
         <footer class="footer">

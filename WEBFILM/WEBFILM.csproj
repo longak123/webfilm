@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -79,6 +80,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -196,14 +198,22 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\infoMovie.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Movie.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Movie.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -236,9 +246,38 @@
     <Content Include="Content\images\s-4.jpg" />
     <Content Include="Content\images\s-5.png" />
     <Content Include="Content\images\tw.png" />
+    <Content Include="Content\imgloginsignup\lf.png" />
+    <Content Include="Content\imgloginsignup\mail.png" />
+    <Content Include="Content\imgloginsignup\Movie Night-amico 1.png" />
+    <Content Include="Content\imgloginsignup\Vector 17.png" />
+    <Content Include="Content\imgloginsignup\Vector.png" />
+    <Content Include="Content\imgloginsignup\XMLID 2387.png" />
+    <Content Include="Content\imgloginsignup\XMLID 2388.png" />
     <Content Include="Content\JQuery3.3.1.js" />
     <Content Include="Content\lightslider.css" />
     <Content Include="Content\lightslider.js" />
+    <Content Include="Content\login.css" />
+    <Content Include="Content\loginsignup.css" />
+    <Content Include="Content\sb-admin-2.css" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\vendor\datatables\dataTables.bootstrap4.css" />
+    <Content Include="Content\vendor\datatables\dataTables.bootstrap4.js" />
+    <Content Include="Content\vendor\datatables\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\vendor\datatables\dataTables.bootstrap4.min.js" />
+    <Content Include="Content\vendor\datatables\jquery.dataTables.js" />
+    <Content Include="Content\vendor\datatables\jquery.dataTables.min.js" />
+    <Content Include="Content\vendor\fontawesome-free\css\all.min.css" />
+    <Content Include="Content\vendor\fontawesome-free\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\vendor\fontawesome-free\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\vendor\fontawesome-free\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="Content\vendor\jquery\jquery.js" />
+    <Content Include="Content\vendor\jquery\jquery.min.js" />
+    <Content Include="Content\vendor\jquery\jquery.slim.js" />
+    <Content Include="Content\vendor\jquery\jquery.slim.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -250,7 +289,34 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Models\Movie.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Movie.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Content\vendor\fontawesome-free\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\vendor\fontawesome-free\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\vendor\fontawesome-free\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\vendor\fontawesome-free\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\vendor\fontawesome-free\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\vendor\fontawesome-free\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\vendor\fontawesome-free\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\vendor\fontawesome-free\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\vendor\fontawesome-free\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\vendor\fontawesome-free\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\vendor\fontawesome-free\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
+    <Content Include="Content\vendor\jquery\jquery.min.map" />
+    <Content Include="Content\vendor\jquery\jquery.slim.min.map" />
+    <None Include="Models\Movie.dbml.layout">
+      <DependentUpon>Movie.dbml</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\datatables-demo.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -261,8 +327,11 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\sb-admin-2.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -294,14 +363,34 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\List.cshtml" />
     <Content Include="Views\Home\Detail.cshtml" />
+    <Content Include="Views\Shared\Admin_Layout.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\Signup.cshtml" />
+    <Content Include="Views\Shared\View.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Admin\users.cshtml" />
+    <Content Include="Views\Admin\Home.cshtml" />
+    <Content Include="Views\Admin\DienVien.cshtml" />
+    <Content Include="Views\Admin\ThemDienVien.cshtml" />
+    <Content Include="Views\Admin\SuaDienVien.cshtml" />
+    <Content Include="Views\Admin\DaoDien.cshtml" />
+    <Content Include="Views\Admin\ThemDaoDien.cshtml" />
+    <Content Include="Views\Admin\SuaDaoDien.cshtml" />
+    <Content Include="Views\Admin\TheLoai.cshtml" />
+    <Content Include="Views\Admin\ThemTheLoai.cshtml" />
+    <Content Include="Views\Admin\SuaTheLoai.cshtml" />
+    <Content Include="Views\Admin\ThemUsers.cshtml" />
+    <Content Include="Views\Admin\SuaUsers.cshtml" />
+    <Content Include="Views\Admin\TinTuc.cshtml" />
+    <Content Include="Views\Admin\ThemTinTuc.cshtml" />
+    <Content Include="Views\Admin\veban.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -310,6 +399,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
