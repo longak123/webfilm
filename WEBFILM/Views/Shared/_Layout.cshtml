@@ -2,7 +2,10 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=containc">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="~/Content/Site.css" />
     <link rel="stylesheet" href="~/Content/lightslider.css" />
     <link href="~/Content/login.css" rel="stylesheet" />
@@ -10,17 +13,16 @@
     <script src="~/Content/lightslider.js"></script>
     @RenderSection("css", false)
     @RenderSection("scriptstren", required: false)
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />*@
 
     <title>PhimHL.com</title>
 </head>
-<body>
+<body onload="onReady()">
     <div>
-            @*<section>
+        @*<section>
                 <div class="logo">
                     <a href="#">PHIMHL</a>
-                </div>  
+                </div>
                 <div class="nav">
                     <a href="">PhimHL</a>
                     <a href="">Thể Loại</a>
@@ -32,7 +34,7 @@
                     <a href="">List a - z</a>
                     <a href="">Yêu cầu</a>
                 </div>
-            </section> 
+            </section>
             <div class="searchItem">
                 <div class="search">
                     <input type="text" placeholder="Nhập phim muốn tìm" />
@@ -63,11 +65,11 @@
                 <li><a href="#">Quốc Gia</a> </li>
                 <li><a href="#">Loại phim</a> </li>
                 <li><a href="#">TV series</a> </li>
-                <li><a href="#">Movie</a> </li>
+                <li><a href="~/Home/Tickets">Movie</a> </li>
                 <li><a href="#">Top IMDB</a> </li>
             </ul>
             @*<li><a href="#">List a-z </a> </li>
-        <li><a href="#">Yêu cầu </a> </li>*@
+                <li><a href="#">Yêu cầu </a> </li>*@
             <div class="search">
                 <input type="text" placeholder="Nhập phim muốn tìm" />
                 <i class="fas fa-search"></i>
@@ -75,86 +77,88 @@
             @*<button class="btn"><a href="#">Đăng nhập</a></button>*@
             @{Html.RenderPartial("View"); }
             @*<li>
-            <button class="bt-login" onclick="document.getElementById('id01').style.display='block'">Login</button>
-        </li>*@
+                    <button class="bt-login" onclick="document.getElementById('id01').style.display='block'">Login</button>
+                </li>*@
         </nav>
-      
-          @*<section id="main">
-              <h1 class="showcase-heading">Phim sắp ra</h1>
 
-              <ul id="autoWidth" class="cs-hidden">
-                  <li class="item-a">
-                      <div class="showcase-box">
-                          <div class="showcase-box-img">
-                          <img src="~/Content/images/m-1.jpg" />
-                          </div>
-                          <div class="showcase-box-text">
-                              <strong>Tiêu đề phim</strong>
-                              <p>Thể loại phim </p>
-                          </div>
-                      </div>
-                  </li>
-                  <li class="item-b">
-                      <div class="showcase-box">
-                          <div class="showcase-box-img">
-                              <img src="~/Content/images/m-2.jpg" />
-                          </div>
-                          <div class="showcase-box-text">
-                              <strong>Tiêu đề phim</strong>
-                              <p>Thể loại phim </p>
-                          </div>
-                      </div>
-                  </li>
-                  <li class="item-c">
-                      <div class="showcase-box">
-                          <div class="showcase-box-img">
-                              <img src="~/Content/images/m-3.jpg" />
-                          </div>
-                          <div class="showcase-box-text">
-                              <strong>Tiêu đề phim</strong>
-                              <p>Thể loại phim </p>
-                          </div>
-                      </div>
-                  </li>
-                  <li class="item-d">
-                      <div class="showcase-box">
-                          <div class="showcase-box-img">
-                              <img src="~/Content/images/m-4.jpg" />
-                          </div>
-                          <div class="showcase-box-text">
-                              <strong>Tiêu đề phim</strong>
-                              <p>Thể loại phim </p>
-                          </div>
-                      </div>
-                  </li>
-                  <li class="item-e">
-                      <div class="showcase-box">
-                          <div class="showcase-box-img">
-                              <img src="~/Content/images/m-5.jpg" />
-                          </div>
-                          <div class="showcase-box-text">
-                              <strong>Tiêu đề phim</strong>
-                              <p>Thể loại phim </p>
-                          </div>
-                      </div>
-                  </li>
-                  <li class="item-f">
-                      <div class="showcase-box">
-                          <div class="showcase-box-img">
-                              <img src="~/Content/images/m-6.jpg" />
-                          </div>
-                          <div class="showcase-box-text">
-                              <strong>Tiêu đề phim</strong>
-                              <p>Thể loại phim </p>
-                          </div>
-                      </div>
-                  </li>
-              </ul>
+        @*@<section id="main">
+                <h1 class="showcase-heading">Phim sắp ra</h1>
 
-             
-          </section>*@
-        
-        @RenderBody()
+                <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                        <div class="showcase-box">
+                            <div class="showcase-box-img">
+                            <img src="~/Content/images/m-1.jpg" />
+                            </div>
+                            <div class="showcase-box-text">
+                                <strong>Tiêu đề phim</strong>
+                                <p>Thể loại phim </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-b">
+                        <div class="showcase-box">
+                            <div class="showcase-box-img">
+                                <img src="~/Content/images/m-2.jpg" />
+                            </div>
+                            <div class="showcase-box-text">
+                                <strong>Tiêu đề phim</strong>
+                                <p>Thể loại phim </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-c">
+                        <div class="showcase-box">
+                            <div class="showcase-box-img">
+                                <img src="~/Content/images/m-3.jpg" />
+                            </div>
+                            <div class="showcase-box-text">
+                                <strong>Tiêu đề phim</strong>
+                                <p>Thể loại phim </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-d">
+                        <div class="showcase-box">
+                            <div class="showcase-box-img">
+                                <img src="~/Content/images/m-4.jpg" />
+                            </div>
+                            <div class="showcase-box-text">
+                                <strong>Tiêu đề phim</strong>
+                                <p>Thể loại phim </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-e">
+                        <div class="showcase-box">
+                            <div class="showcase-box-img">
+                                <img src="~/Content/images/m-5.jpg" />
+                            </div>
+                            <div class="showcase-box-text">
+                                <strong>Tiêu đề phim</strong>
+                                <p>Thể loại phim </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-f">
+                        <div class="showcase-box">
+                            <div class="showcase-box-img">
+                                <img src="~/Content/images/m-6.jpg" />
+                            </div>
+                            <div class="showcase-box-text">
+                                <strong>Tiêu đề phim</strong>
+                                <p>Thể loại phim </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+
+            </section>*@
+        <div>
+            @RenderBody()
+        </div>
+
         <footer class="footer">
             <div class="container">
                 <div class="row">
@@ -188,16 +192,17 @@
                     <div class="footer-col">
                         <h4>Follow us</h4>
                         <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
+    <script src="~/Scripts/loginsignup.js"></script>
     <script>
         $(document).ready(function () {
             $('#autoWidth').lightSlider({
@@ -209,5 +214,6 @@
             });
         });
     </script>
+    @RenderSection("scriptsduoi", required: false)
 </body>
 </html>

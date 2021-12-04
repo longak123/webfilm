@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<WEBFILM.Models.Movy>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,19 +8,25 @@
     <article>
         <section>
             <div class="movies-heading">
-                <h2><a href="#">PHIM</a></h2>
+                <h2><a href="#">DANH SÁCH PHIM</a></h2>
             </div>
             <section id="movies-list">
-                <div class="movies-box">
-                    <div class="movies-img">
-                        <div class="quality">HDrip</div>
-                        <img src="~/Content/images/l-1.jpg" />
+                @foreach (var item in Model)
+                {
+                    <div class="movies-box">
+                        <div class="movies-img">
+                            <div class="quality">HDrip</div>
+                            <img src="@item.Image" />
+                        </div>
+                        <a class="decription" href="/Home/Detail/@item.MovieID">
+                            @item.Title | IMDB: @item.IMDb
+                        </a>
                     </div>
-                    <a class="decription" href="/Home/Detail">
-                        into darkness(raw)
-                    </a>
-                </div>
-                <div class="movies-box">
+
+                }
+            </section>
+
+                    @*<div class="movies-box">
                     <div class="movies-img">
                         <div class="quality">HDrip</div>
                         <img src="~/Content/images/l-2.jpg" />
@@ -73,81 +79,81 @@
                     <a class="decription" href="#">
                         Tên phim | Chất lượng |
                     </a>
-                </div>
+                </div>*@
 
+                
             </section>
-        </section>
-        <section>
-            <div class="movies-heading">
-                <h2><a href="#">PHIM BỘ</a></h2>
-            </div>
-            <section id="movies-list">
-                <div class="movies-box">
-                    <div class="movies-img">
-                        <div class="quality">HDrip</div>
-                        <img src="~/Content/images/l-1.jpg" />
-                    </div>
-                    <a class="decription" href="#">
-                        into darkness(raw)
-                    </a>
+        @*<section>
+                <div class="movies-heading">
+                    <h2><a href="#">PHIM BỘ</a></h2>
                 </div>
-                <div class="movies-box">
-                    <div class="movies-img">
-                        <div class="quality">HDrip</div>
-                        <img src="~/Content/images/l-2.jpg" />
+                <section id="movies-list">
+                    <div class="movies-box">
+                        <div class="movies-img">
+                            <div class="quality">HDrip</div>
+                            <img src="~/Content/images/l-1.jpg" />
+                        </div>
+                        <a class="decription" href="#">
+                            into darkness(raw)
+                        </a>
                     </div>
-                    <a class="decription" href="#">
-                        Tên phim | Chất lượng |
-                    </a>
-                </div>
-                <div class="movies-box">
-                    <div class="movies-img">
-                        <div class="quality">HDrip</div>
-                        <img src="~/Content/images/l-3.jpg" />
+                    <div class="movies-box">
+                        <div class="movies-img">
+                            <div class="quality">HDrip</div>
+                            <img src="~/Content/images/l-2.jpg" />
+                        </div>
+                        <a class="decription" href="#">
+                            Tên phim | Chất lượng |
+                        </a>
                     </div>
-                    <a class="decription" href="#">
-                        Gia đình tiền sử (Vietsub) chất lượng 720
-                    </a>
-                </div>
-                <div class="movies-box">
-                    <div class="movies-img">
-                        <div class="quality">HDrip</div>
-                        <img src="~/Content/images/l-4.jpg" />
+                    <div class="movies-box">
+                        <div class="movies-img">
+                            <div class="quality">HDrip</div>
+                            <img src="~/Content/images/l-3.jpg" />
+                        </div>
+                        <a class="decription" href="#">
+                            Gia đình tiền sử (Vietsub) chất lượng 720
+                        </a>
                     </div>
-                    <a class="decription" href="#">
-                        Toy story 3 (Vietsub) Chất lượng 1080
-                    </a>
-                </div>
-                <div class="movies-box">
-                    <div class="movies-img">
-                        <div class="quality">HDrip</div>
-                        <img src="~/Content/images/l-5.jpg" />
+                    <div class="movies-box">
+                        <div class="movies-img">
+                            <div class="quality">HDrip</div>
+                            <img src="~/Content/images/l-4.jpg" />
+                        </div>
+                        <a class="decription" href="#">
+                            Toy story 3 (Vietsub) Chất lượng 1080
+                        </a>
                     </div>
-                    <a class="decription" href="#">
-                        Tên phim | Chất lượng |
-                    </a>
-                </div>
-                <div class="movies-box">
-                    <div class="movies-img">
-                        <div class="quality">HDrip</div>
-                        <img src="~/Content/images/l-6.jpg" />
+                    <div class="movies-box">
+                        <div class="movies-img">
+                            <div class="quality">HDrip</div>
+                            <img src="~/Content/images/l-5.jpg" />
+                        </div>
+                        <a class="decription" href="#">
+                            Tên phim | Chất lượng |
+                        </a>
                     </div>
-                    <a class="decription" href="#">
-                        Tên phim | Chất lượng |
-                    </a>
-                </div>
-                <div class="movies-box">
-                    <div class="movies-img">
-                        <div class="quality">HDrip</div>
-                        <img src="~/Content/images/l-7.jpg" />
+                    <div class="movies-box">
+                        <div class="movies-img">
+                            <div class="quality">HDrip</div>
+                            <img src="~/Content/images/l-6.jpg" />
+                        </div>
+                        <a class="decription" href="#">
+                            Tên phim | Chất lượng |
+                        </a>
                     </div>
-                    <a class="decription" href="#">
-                        Tên phim | Chất lượng |
-                    </a>
-                </div>
+                    <div class="movies-box">
+                        <div class="movies-img">
+                            <div class="quality">HDrip</div>
+                            <img src="~/Content/images/l-7.jpg" />
+                        </div>
+                        <a class="decription" href="#">
+                            Tên phim | Chất lượng |
+                        </a>
+                    </div>
 
-            </section>
-        </section>
+                </section>
+            </section>*@
     </article>
     <aside>
         <section>

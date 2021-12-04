@@ -214,15 +214,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Movie.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\readnew.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap.rtl.min.css" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.bundle.js" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.esm.js" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.esm.min.js" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.js" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.min.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\choose-seats.css" />
+    <Content Include="Content\head-foot.css" />
+    <Content Include="Content\images\clock.png" />
     <Content Include="Content\images\fav icon.png" />
     <Content Include="Content\images\fb.png" />
     <Content Include="Content\images\gg.png" />
+    <Content Include="Content\images\Group 87.png" />
     <Content Include="Content\images\l-1.jpg" />
     <Content Include="Content\images\l-2.jpg" />
     <Content Include="Content\images\l-3.jpg" />
@@ -246,6 +273,11 @@
     <Content Include="Content\images\s-4.jpg" />
     <Content Include="Content\images\s-5.png" />
     <Content Include="Content\images\tw.png" />
+    <Content Include="Content\image_review\clock.png" />
+    <Content Include="Content\image_review\facebook.png" />
+    <Content Include="Content\image_review\Group 118 %281%29.png" />
+    <Content Include="Content\image_review\mail.png" />
+    <Content Include="Content\image_review\volume-1.png" />
     <Content Include="Content\imgloginsignup\lf.png" />
     <Content Include="Content\imgloginsignup\mail.png" />
     <Content Include="Content\imgloginsignup\Movie Night-amico 1.png" />
@@ -258,7 +290,26 @@
     <Content Include="Content\lightslider.js" />
     <Content Include="Content\login.css" />
     <Content Include="Content\loginsignup.css" />
+    <Content Include="Content\news\00-2021-summerpreviewlead-blackwidow.jpg" />
+    <Content Include="Content\news\anniversaryposter2019_hkoc.jpg" />
+    <Content Include="Content\news\bossbabymain.png" />
+    <Content Include="Content\news\emojione-v1_credit-card.png" />
+    <Content Include="Content\news\fan_emma-stone_cruella_20210512.jpg" />
+    <Content Include="Content\news\fan_nobody_postercrop.jpg" />
+    <Content Include="Content\news\logo.png" />
+    <Content Include="Content\news\momo-logo.png" />
+    <Content Include="Content\news\paypal-logo.png" />
+    <Content Include="Content\news\photo-1-1621701365567118222133.jpg" />
+    <Content Include="Content\news\Rectangle 92.png" />
+    <Content Include="Content\news\Rectangle 93.png" />
+    <Content Include="Content\news\Rectangle 95.png" />
+    <Content Include="Content\news\Rectangle 98.png" />
+    <Content Include="Content\news\Screen Shot 2021-06-24 at 2.29.51 PM.png" />
+    <Content Include="Content\news\sdad.jpg" />
+    <Content Include="Content\news\unnamed.jpg" />
     <Content Include="Content\sb-admin-2.css" />
+    <Content Include="Content\Style-ticket-show.css" />
+    <Content Include="Content\tiecketsieucapvippro.css" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.js" />
@@ -312,10 +363,33 @@
     <Content Include="Content\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Content\vendor\jquery\jquery.min.map" />
     <Content Include="Content\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.esm.js.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.esm.min.js.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.js.map" />
+    <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.min.js.map" />
     <None Include="Models\Movie.dbml.layout">
       <DependentUpon>Movie.dbml</DependentUpon>
     </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\choose-seats.js" />
     <Content Include="Scripts\datatables-demo.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -324,10 +398,14 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\loginsignup.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\qrcode.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\sb-admin-2.min.js" />
+    <Content Include="Scripts\script-detail.js" />
+    <Content Include="Scripts\ticket.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -338,7 +416,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
@@ -387,6 +467,17 @@
     <Content Include="Views\Admin\TinTuc.cshtml" />
     <Content Include="Views\Admin\ThemTinTuc.cshtml" />
     <Content Include="Views\Admin\veban.cshtml" />
+    <Content Include="Views\Admin\ThemVePhim.cshtml" />
+    <Content Include="Views\Admin\phimdangchieu.cshtml" />
+    <Content Include="Views\Admin\ThemPhimDC.cshtml" />
+    <Content Include="Views\Admin\ThemChiTiet.cshtml" />
+    <Content Include="Views\Admin\datve.cshtml" />
+    <Content Include="Views\Admin\chitietve.cshtml" />
+    <Content Include="Views\Home\Tickets.cshtml" />
+    <Content Include="Views\Home\TicketBook.cshtml" />
+    <Content Include="Views\Home\TicketShow.cshtml" />
+    <Content Include="Views\Home\choose.cshtml" />
+    <Content Include="Views\Home\pay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
