@@ -84,19 +84,11 @@
     <article>
         <section>
             <div class="movies-heading">
-                <h2><a href="#">DANH SÁCH PHIM</a></h2>
-                <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn">Top xem</button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <a href="#home">Top ngày</a>
-                        <a href="#about">Top tuần</a>
-                        <a href="#contact">Top tháng</a>
-                        @*<a href="#contact">Top all</a>*@
-
-                    </div>
-                </div>
+                <h2><a href="#">Tin Tức</a></h2>
             </div>
             <section id="movies-list">
+                @foreach(var item in Model)
+                { 
                 <div class="movies-box">
                     <div class="movies-img">
                         <div class="quality">HDrip</div>
@@ -106,7 +98,8 @@
                         into darkness(raw)
                     </a>
                 </div>
-                <div class="movies-box">
+                }
+                @*<div class="movies-box">
                     <div class="movies-img">
                         <div class="quality">HDrip</div>
                         <img src="~/Content/images/l-2.jpg" />
@@ -204,14 +197,9 @@
                     <a class="decription" href="#">
                         Tên phim | Chất lượng |
                     </a>
-                </div>
+                </div>*@
             </section>
         </section>
-        <div class="btns">
-            <a href="#">Trước</a>
-            <a href="#">Sau</a>
-
-        </div>
     </article>
 
 </div>

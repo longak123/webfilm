@@ -201,6 +201,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ResourceHandlerRegistry.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -267,16 +268,19 @@
     <Content Include="Content\images\m-6.jpg" />
     <Content Include="Content\images\m-7.jpeg" />
     <Content Include="Content\images\proxy_form.png" />
+    <Content Include="Content\images\Rectangle 70.png" />
     <Content Include="Content\images\s-1.jpg" />
     <Content Include="Content\images\s-2.jpg" />
     <Content Include="Content\images\s-3.jpg" />
     <Content Include="Content\images\s-4.jpg" />
     <Content Include="Content\images\s-5.png" />
+    <Content Include="Content\images\Screen.png" />
     <Content Include="Content\images\tw.png" />
     <Content Include="Content\image_review\clock.png" />
     <Content Include="Content\image_review\facebook.png" />
     <Content Include="Content\image_review\Group 118 %281%29.png" />
     <Content Include="Content\image_review\mail.png" />
+    <Content Include="Content\image_review\Vector.png" />
     <Content Include="Content\image_review\volume-1.png" />
     <Content Include="Content\imgloginsignup\lf.png" />
     <Content Include="Content\imgloginsignup\mail.png" />
@@ -308,7 +312,10 @@
     <Content Include="Content\news\sdad.jpg" />
     <Content Include="Content\news\unnamed.jpg" />
     <Content Include="Content\sb-admin-2.css" />
+    <Content Include="Content\style-newhot.css" />
+    <Content Include="Content\style-news3.css" />
     <Content Include="Content\Style-ticket-show.css" />
+    <Content Include="Content\thankyou.css" />
     <Content Include="Content\tiecketsieucapvippro.css" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.min.js" />
@@ -385,15 +392,26 @@
     <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.esm.min.js.map" />
     <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.js.map" />
     <Content Include="Content\bootstrap-5.0.2-dist\js\bootstrap.min.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
     <None Include="Models\Movie.dbml.layout">
       <DependentUpon>Movie.dbml</DependentUpon>
     </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\choose-seats.js" />
+    <Content Include="Scripts\choose.js" />
     <Content Include="Scripts\datatables-demo.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.min.map" />
+    <Content Include="Scripts\jquery.slim.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.3.5.1.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.slim.js" />
+    <Content Include="Scripts\jquery.slim.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -405,6 +423,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\sb-admin-2.min.js" />
     <Content Include="Scripts\script-detail.js" />
+    <Content Include="Scripts\script-news2.js" />
     <Content Include="Scripts\ticket.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
@@ -478,6 +497,9 @@
     <Content Include="Views\Home\TicketShow.cshtml" />
     <Content Include="Views\Home\choose.cshtml" />
     <Content Include="Views\Home\pay.cshtml" />
+    <Content Include="Views\Shared\Home_Layout.cshtml" />
+    <Content Include="Views\Home\MoviesHotNews.cshtml" />
+    <Content Include="Views\Home\NewsDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

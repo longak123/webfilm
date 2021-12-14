@@ -68,7 +68,7 @@ nav .menu li a{
     margin:0px;
     padding:0px 22px;
     display:flex;
-    font-size:0.8rem;
+    /*font-size:0.8rem;*/
     text-transform:uppercase;
     font-weight:500;
     color:#585858;
@@ -101,6 +101,8 @@ nav .menu li a{
    align-items:center;
    border-radius:20px;
    padding:0px 20px;
+   margin: 20px 0px 20px 300px;
+   
 }
 
 .search input{
@@ -305,6 +307,7 @@ aside{
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #0397d6;
+    margin: 20px 0px;
 }
 .movies-heading{
     display:flex;
@@ -353,6 +356,7 @@ aside{
     justify-content:center;
     align-items:center;
     flex-wrap:wrap;
+    margin: 20px 0px;
 }
 .quality{
     position:absolute;
@@ -529,7 +533,7 @@ aside{
     left:450px;
 }
 .dropbtn {
-  background-color: #3498DB;
+  background-color: #2980B9;
   color: white;
   padding: 9px;
   font-size: 16px;
@@ -537,7 +541,7 @@ aside{
   cursor: pointer;
 }
 .dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
+  background-color: #979797;
 }
 .dropdown {
   position: relative;

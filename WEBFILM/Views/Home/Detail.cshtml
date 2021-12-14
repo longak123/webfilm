@@ -4,17 +4,8 @@
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
     MovieDataContext db = new MovieDataContext();
-    //var key = Model.MovieInf.MovieID;
-    var youtubeReview = (from a in db.Movies
-                         join b in db.ReviewOfMovies on a.MovieID equals b.MovieID into table_1
-                         from c in table_1
-                         join d in db.YoutubeReviews on c.YoutubeID equals d.YoutubeID
-                         select new
-                         {
-                             ID = c.MovieID,
-                             Video = d.Video,
-                             Author = d.Author,
-                         }).OrderByDescending(a => a.Video).ToList();
+    var key = Model.MovieInf.MovieID;
+    
 }
 
 <div class="row">
@@ -44,7 +35,7 @@
                             <img height="600px" ; src="@Html.DisplayFor(m=>m.MovieInf.Image)"/>
                             <div class="detail-click">
                                 <a href="~/Home/Tickets">Đặt phòng</a>
-                                <a href="#">Xem trailer</a>
+                                <a href="@Html.DisplayFor(m=>m.MovieInf.Trailer)">Xem trailer</a>
                             </div>
                         </div>
                     </div>

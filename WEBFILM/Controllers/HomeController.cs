@@ -28,9 +28,7 @@ namespace WEBFILM.Controllers
             return View(links);
         }
 
-
-
-        private List<Movy> GetMovies()
+    private List<Movy> GetMovies()
         {
             List<Movy> movy = new List<Movy>(db.Movies);
             return movy;
@@ -53,8 +51,6 @@ namespace WEBFILM.Controllers
             List<Movy> Movie = db.Movies.ToList();
             List<MoviesGenre> MoviesGenre = db.MoviesGenres.ToList();
             List<Genre> Genre = db.Genres.ToList();
-            List<ReviewOfMovie> reviewOfMovies = db.ReviewOfMovies.ToList();
-            List<YoutubeReview> youtubeReviews = db.YoutubeReviews.ToList();
             List<Comment> comments = db.Comments.ToList();
             List<MovieDirector> movieDirectors = db.MovieDirectors.ToList();
             List<Director> directors = db.Directors.ToList();
@@ -72,9 +68,6 @@ namespace WEBFILM.Controllers
                             join f in movieActors on b.MovieID equals f.MovieID into table_4
                             from f in table_4
                             join g in actors on f.ActorID equals g.ActorID
-                            join h in reviewOfMovies on b.MovieID equals h.MovieID into table_5
-                            from i in table_5
-                            join j in youtubeReviews on i.YoutubeID equals j.YoutubeID
                             select new infoMovie
                             {
                                 MovieInf = a,
@@ -82,7 +75,6 @@ namespace WEBFILM.Controllers
                                 Category = c,
                                 director = e,
                                 actors = g,
-                                youtubeReview = j
                             };
             var img = linkMulti.ToList();
             var imgg = img.Find(m => m.MovieInf.MovieID == id);
@@ -100,6 +92,36 @@ namespace WEBFILM.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        private List<New> GetTopNews(int count)
+        {
+            return db.News.OrderByDescending(a => a.ReadCount).Take(count).ToList();
+        }
+        public ActionResult MoviesHotNews()
+        {
+            var gido = GetTopNews(9);
+            return View(gido);
+        }
+        public ActionResult NewsDetail(int? id)
+        {
+            if (id == null)
+                return HttpNotFound();
+            List<User> users = db.Users.ToList();
+            List<New> news = db.News.ToList();
+            var multi = from a in users
+                        join b in news on a.UserID equals b.UserID into table1
+                        from b in table1
+
+                        select new readNew
+                        {
+                            usersss = a,
+                            newsss = b
+                        };
+            var rn = multi.ToList();
+            var dn = rn.Find(a => a.newsss.NewsID == id);
+            if (dn == null)
+                return HttpNotFound();
+            return View(dn);
         }
         public ActionResult Tickets(string daysd)
         {
@@ -229,7 +251,7 @@ namespace WEBFILM.Controllers
         {
             if (Session["Username"] == null || Session["Username"].ToString() == "")
             {
-                return RedirectToAction("Login", "Users");
+                return RedirectToAction("Login", "User");
             }
             float tien = int.Parse(coll["tongtientien"]);
             int soghe = int.Parse(coll["soluongghe"]);
